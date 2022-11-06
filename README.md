@@ -32,4 +32,3 @@ python3 manage.py runserver
 You can use following superuser for testing website:
 * Login: admin.user
 * Password: 1qazcde3
-* 
