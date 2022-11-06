@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get(
 
 
 # SECURITY WARNING: don"t run with debug turned on in production!
-DEBUG = bool(os.environ.get("DJANGO_DEBUG", True))
+DEBUG = os.environ.get("DJANGO_DEBUG", "") != "False"
 
 ALLOWED_HOSTS = ["127.0.0.1", "py-taxi-service-deploying.herokuapp.com"]
 
