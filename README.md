@@ -4,7 +4,7 @@ Django project for Taxi service
 
 ## Check it out!
 
-[Taxi service deployed to Heroku](PASTE_LINK_HERE)
+[Taxi service deployed to Heroku](https://py-taxi-service-deploying.herokuapp.com/)
 
 ## Installation
 
@@ -26,3 +26,10 @@ python3 manage.py runserver
 * Authentication functionality for Driver/User
 * Managing drivers, cars and manufacturers directly from website
 * Admin panel for advanced management
+
+## Testing website
+
+You can use following superuser for testing website:
+* Login: admin.user
+* Password: 1qazcde3
+* 
