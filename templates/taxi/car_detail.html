@@ -1,35 +1,53 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="jumbotron p-3 text-center">
   <h1>
     {{ car.model }}
-    <a href="{% url 'taxi:car-delete' pk=car.id %}" class="btn btn-danger link-to-page">
+    <a href="{% url 'taxi:car-delete' pk=car.id %}" class="btn btn-danger btn-lg link-to-page">
       Delete
     </a>
-
-    <a href="{% url 'taxi:car-update' pk=car.id %}" class="btn btn-secondary link-to-page">
+    <a href="{% url 'taxi:car-update' pk=car.id %}" class="btn btn-secondary btn-lg link-to-page">
       Update
     </a>
   </h1>
-  <p>Manufacturer: ({{ car.manufacturer.name }}, {{ car.manufacturer.country }})</p>
+  </div>
   <h1>
     Drivers
-
     {% if car in user.cars.all %}
-      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-danger link-to-page">
+      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-danger btn-lg link-to-page">
         Delete me from this car
       </a>
     {% else %}
-      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-success link-to-page">
+      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-success btn-lg link-to-page">
         Assign me from this car
       </a>
     {% endif %}
-
   </h1>
+
   <hr>
-  <ul>
-    {% for driver in car.drivers.all %}
-      <li>{{ driver.username }} ({{ driver.first_name }} {{ driver.last_name }})</li>
-    {% endfor %}
-  </ul>
+
+  {% if car.drivers.all %}
+    <table class="table table-bordered">
+      <tr class="thead-dark">
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>License number</th>
+      </tr>
+      {% for driver in car.drivers.all %}
+        <tr>
+          <td>{{ driver.id }}</td>
+          <td><a href="{{ driver.get_absolute_url }}">{{ driver.username }} {% if user == driver %} (Me){% endif %}</a></td>
+          <td>{{ driver.first_name }}</td>
+          <td>{{ driver.last_name }}</td>
+          <td>{{ driver.license_number }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no drivers in the service.</p>
+  {% endif %}
+
 {% endblock %}

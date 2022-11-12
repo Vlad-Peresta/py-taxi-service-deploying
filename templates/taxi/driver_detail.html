@@ -1,31 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="jumbotron p-3 text-center">
   <h1>
-    Username: {{ driver.username }}
-    <a href="{% url 'taxi:driver-delete' pk=driver.id %}" class="btn btn-danger link-to-page">
+    {{ driver.username }}
+    <a href="{% url 'taxi:driver-delete' pk=driver.id %}" class="btn btn-danger btn-lg link-to-page">
       Delete
     </a>
 
-    <a href="{% url 'taxi:driver-update' pk=driver.id %}" class="btn btn-secondary link-to-page">
+    <a href="{% url 'taxi:driver-update' pk=driver.id %}" class="btn btn-secondary btn-lg link-to-page">
       Update license number
     </a>
   </h1>
+  </div>
 
-  <p><strong>First name:</strong> {{ driver.first_name }}</p>
-  <p><strong>Last name:</strong> {{ driver.last_name }}</p>
-  <p><strong>License number:</strong> {{ driver.license_number }}</p>
-  <p><strong>Is staff:</strong> {{ driver.is_staff }}</p>
+   <table class="table table-bordered">
+      <tr class="thead-dark">
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Is staff</th>
+        <th>License number</th>
+      </tr>
+      <tr>
+        <td>{{ driver.id }}</td>
+        <td>{{ driver.first_name }}</td>
+        <td>{{ driver.last_name }}</td>
+        <td>{{ driver.is_staff }}</td>
+        <td>{{ driver.license_number }}</td>
+      </tr>
+   </table>
 
-  <div class="ml-3">
-    <h4>Cars</h4>
-
+  <div class="ml-3 mt-4">
+    <h2>Cars</h2>
     {% for car in driver.cars.all %}
         <hr>
         <p><strong>Model:</strong> {{ car.model }}</p>
         <p><strong>Manufacturer:</strong> {{ car.manufacturer.name }}</p>
         <p class="text-muted"><strong>Id:</strong> {{car.id}}</p>
-
     {% empty %}
       <p>No cars!</p>
     {% endfor %}

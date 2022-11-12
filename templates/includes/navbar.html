@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <a class="navbar-brand" href="#">Taxi service</a>
+
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a href="{% url 'taxi:index' %}" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'taxi:driver-list' %}" class="nav-link">Drivers</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'taxi:car-list' %}" class="nav-link">Cars</a>
+      </li>
+       <li class="nav-item">
+         <a href="{% url 'taxi:manufacturer-list' %}" class="nav-link">Manufacturers</a>
+       </li>
+    </ul>
+
+    <ul class="navbar-nav mt-lg-0 navbar-right">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a href="{{ user.get_absolute_url }}" class="nav-link">
+          <i class="bi bi-person-fill"></i> {{ user.get_username }}
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'logout'%}?next={{request.path}}" class="nav-link">
+          <i class="bi bi-box-arrow-left"></i>
+          Logout
+        </a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a href="{% url 'login'%}?next={{request.path}}" class="nav-link">
+          <i class="bi bi-box-arrow-in-right"></i>
+          Login
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

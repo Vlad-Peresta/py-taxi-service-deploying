@@ -10,15 +10,35 @@ Django project for Taxi service
 
 Python3 must be already installed
 
+#### Download the code
 ```angular2html
-
 git clone git@github.com:Vlad-Peresta/py-taxi-service-deploying.git
 cd py-taxi-service-deploying
+```
+
+#### Set Up for Unix, macOS
+```angular2html
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python3 manage.py runserver
+```
 
+#### Set Up for Windows
+```angular2html
+python3 -m venv venv
+.\env\Scripts\activate
+pip3 install -r requirements.txt
+```
+
+#### Set Up Database
+```angular2html
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+
+#### Start the app
+```angular2html
+python manage.py runserver
 ```
 
 ## Features
@@ -32,3 +52,5 @@ python3 manage.py runserver
 You can use following superuser for testing website:
 * Login: admin.user
 * Password: 1qazcde3
+
+## Features

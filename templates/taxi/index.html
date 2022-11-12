@@ -1,18 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="jumbotron p-3 text-center">
     <h1>Taxi Service Home</h1>
-    <p>Welcome to Best Taxi Ever!</p>
-    <h2>Dynamic content</h2>
-    <p>The Taxi service has the following record counts:</p>
-    <ul>
-        <li><strong>Cars:</strong> {{ num_cars }}</li>
-        <li><strong>Drivers:</strong> {{ num_drivers }}</li>
-        <li><strong>Manufacturers:</strong> {{ num_manufacturers }}</li>
-    </ul>
-
-    <p>You have visited this page
-        {{ num_visits }} time{{ num_visits|pluralize }}.
+    <p>Your Local Taxi Service Network</p>
+  </div>
+  <div class="text-center">
+    <h2>Get The Best taxi Services</h2>
+    <p>Find the best taxi services you need to help you successfully
+      meet your project planning goals and deadline. <br>
+      We provide stylish and comfortable rides in luxury cars.
     </p>
+  </div>
+
+  <div class="card mt-4">
+    <div class="card-body text-center">
+      <h5>The Taxi service has the following record counts:</h5>
+      <div class="row text-center justify-content-around">
+        <div class="card card-body bg-light col-md-3">
+        <i class="bi bi-person-video"></i>
+        <strong>Drivers:</strong> {{ num_drivers }}
+      </div>
+      <div class="card card-body bg-light col-md-3 ">
+        <i class="bi bi-car-front-fill"></i>
+        <strong>Cars:</strong> {{ num_cars }}
+      </div>
+      <div class="card card-body bg-light col-md-3 ">
+        <i class="bi bi-building"></i>
+        <strong>Manufacturers:</strong> {{ num_manufacturers }}
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <h2>Thank you for choosing our service!!!</h2>
+    <p>You have visited this page </p>
+          <h2>{{ num_visits }}</h2>
+      <p>time{{ num_visits|pluralize }} </p>
+  </div>
 
 {% endblock %}
