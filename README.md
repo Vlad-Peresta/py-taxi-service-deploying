@@ -4,7 +4,7 @@ Django project for Taxi service
 
 ## Check it out!
 
-[Taxi service deployed to Heroku](https://py-taxi-service-deploying.herokuapp.com/)
+[Taxi service deployed to Render](https://taxi-service-oixa.onrender.com/)
 
 ## Installation
 
