@@ -19,8 +19,9 @@
 <body>
 
 <div class="section">
-  <div class="container">
-    {% block sidebar %}
+  <div class="container d-flex flex-column min-vh-100 container-bg">
+
+    {% block navbar %}
       {% include "includes/navbar.html" %}
     {% endblock %}
 
@@ -29,12 +30,12 @@
     {% block pagination %}
       {% include "includes/pagination.html" %}
     {% endblock %}
+
+    {% block footer %}
+      {% include "includes/footer.html" %}
+    {% endblock %}
+
   </div>
-
-  {% block footer %}
-    {% include "includes/footer.html" %}
-  {% endblock %}
-
 </div>
 
 </body>
