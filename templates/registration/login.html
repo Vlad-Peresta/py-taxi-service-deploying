@@ -3,15 +3,17 @@
 
 {% block content %}
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+<div class="text-center">
+  <h1 class="m-3">Login</h1>
 
-<h1>Login</h1>
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
 
-{% if next %}
-  <p>Please login to see this page.</p>
-{% endif %}
+  {% if next %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+</div>
 
 <form method="post" action="{% url 'login' %}">
   {% csrf_token %}

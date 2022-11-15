@@ -12,13 +12,12 @@
   </h1>
   </div>
 
-  <form action="" method="get" class="row form-group">
-    <div class="col-11">
-      {{ car_search_form|crispy }}
+  <form action="" method="get" class="input-group mb-3">
+    {{ car_search_form }}
+
+    <div class="input-group-append">
+      <input type="submit" value="🔍" class="btn btn-dark">
     </div>
-      <div class="col-1">
-        <input type="submit" value="🔍" class="btn btn-dark">
-      </div>
   </form>
 
   {% if car_list %}

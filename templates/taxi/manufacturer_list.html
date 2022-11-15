@@ -12,11 +12,10 @@
     </h1>
   </div>
 
-  <form action="" method="get" class="row form-group">
-    <div class="col-11">
-      {{ manufacturer_search_form|crispy }}
-    </div>
-    <div class="col-1">
+  <form action="" method="get" class="input-group mb-3">
+    {{ manufacturer_search_form }}
+
+    <div class="input-group-append">
       <input type="submit" value="🔍" class="btn btn-dark">
     </div>
   </form>

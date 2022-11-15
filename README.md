@@ -1,4 +1,4 @@
-# py-taxi-service-deploying
+# Taxi Service
 
 Django project for Taxi service
 
