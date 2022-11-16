@@ -2,15 +2,16 @@
 
 {% block content %}
   <div class="jumbotron p-3 text-center">
-  <h1>
+  <h1 class="d-inline">
     {{ car.model }}
-    <a href="{% url 'taxi:car-delete' pk=car.id %}" class="btn btn-danger btn-lg link-to-page">
-      Delete
-    </a>
-    <a href="{% url 'taxi:car-update' pk=car.id %}" class="btn btn-secondary btn-lg link-to-page">
-      Update
-    </a>
   </h1>
+  <a href="{% url 'taxi:car-delete' pk=car.id %}" class="btn btn-danger btn-lg link-to-page mb-1 mt-1 pb-1 pt-1">
+    Delete
+  </a>
+  <a href="{% url 'taxi:car-update' pk=car.id %}" class="btn btn-secondary btn-lg link-to-page mb-1 mt-1 pb-1 pt-1">
+    Update
+  </a>
+
   </div>
   <h1>
     Drivers
