@@ -2,16 +2,18 @@
 
 {% block content %}
   <div class="jumbotron p-3 text-center">
-  <h1>
+  <h1 class="d-inline">
     {{ driver.username }}
-    <a href="{% url 'taxi:driver-delete' pk=driver.id %}" class="btn btn-danger btn-lg link-to-page">
-      Delete
-    </a>
-
-    <a href="{% url 'taxi:driver-update' pk=driver.id %}" class="btn btn-secondary btn-lg link-to-page">
-      Update license number
-    </a>
   </h1>
+  <a href="{% url 'taxi:driver-delete' pk=driver.id %}"
+     class="btn btn-danger btn-lg link-to-page mb-1 mt-1 pb-1 pt-1">
+    Delete
+  </a>
+  <a href="{% url 'taxi:driver-update' pk=driver.id %}"
+     class="btn btn-secondary btn-lg link-to-page mb-1 mt-1 pb-1 pt-1">
+    Update license number
+  </a>
+
   </div>
 
    <table class="table table-bordered">
